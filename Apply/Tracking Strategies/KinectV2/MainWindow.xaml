@@ -1,0 +1,19 @@
+﻿<Window x:Class="KinectV2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Kinect for Windows SDK v2" 
+        Loaded="Window_Loaded"
+        Closing="Window_Closing"
+        WindowState="Maximized"
+        WindowStyle="None"
+        >
+    <Grid>
+        <Image x:Name="ImageColor"/>
+        <Canvas x:Name="CanvasBody"/>
+        <Canvas x:Name="CanvasImage"/>
+        
+        <ComboBox x:Name="ComboChoosePlayerType" 
+                  FontSize="20" Height="30" Width="250"
+                  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

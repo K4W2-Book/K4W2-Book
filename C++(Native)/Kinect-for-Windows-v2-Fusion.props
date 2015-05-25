@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+
+  <!-- Win32 -->
+  <ItemDefinitionGroup Condition="'$(Platform)'=='Win32'">
+    <Link>
+      <AdditionalDependencies>Kinect20.Fusion.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(KINECTSDK20_DIR)\Redist\Fusion\x86" "$(OutDir)" /e /y /i /r</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+
+  <!-- x64 -->
+  <ItemDefinitionGroup Condition="'$(Platform)'=='x64'">
+    <Link>
+      <AdditionalDependencies>Kinect20.Fusion.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(KINECTSDK20_DIR)\Redist\Fusion\x64" "$(OutDir)" /e /y /i /r</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+
+</Project>

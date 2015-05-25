@@ -1,0 +1,20 @@
+﻿<Window x:Class="KinectV2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Kinect for Windows SDK v2" SizeToContent="WidthAndHeight"
+        Loaded="Window_Loaded"
+        Closing="Window_Closing"
+        >
+    <Grid>
+        <Image Width="960" Height="540" Name="ImageColor" />
+        <StackPanel Width="960" Height="540">
+            <TextBlock Name="TextBlock1" Foreground="Red" FontSize="20" />
+            <TextBlock Name="TextBlock2" Foreground="Green" FontSize="20" />
+            <TextBlock Name="TextBlock3" Foreground="Blue" FontSize="20" />
+            <TextBlock Name="TextBlock4" Foreground="Chocolate" FontSize="20" />
+            <TextBlock Name="TextBlock5" Foreground="Orange" FontSize="20" />
+            <TextBlock Name="TextBlock6" Foreground="Violet" FontSize="20" />
+        </StackPanel>
+
+    </Grid>
+</Window>

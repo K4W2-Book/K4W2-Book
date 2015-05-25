@@ -1,0 +1,21 @@
+﻿<Window x:Class="KinectV2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Kinect for Windows SDK v2" SizeToContent="WidthAndHeight"
+        Loaded="Window_Loaded"
+        Closing="Window_Closing"
+        >
+    <Grid Width="960" Height="540">
+        <Image x:Name="ImageColor" />
+        
+        <GroupBox Header="座標系" Width="130" Height="60" 
+                  HorizontalAlignment="Left" VerticalAlignment="Top"
+                  Background="White">
+            <StackPanel Orientation="Vertical" Margin="5">
+                <RadioButton Content="カラー座標系" 
+                             x:Name="IsColorCoodinate" IsChecked="True"/>
+                <RadioButton Content="Depth座標系"/>
+            </StackPanel> 
+        </GroupBox>
+    </Grid>
+</Window>
