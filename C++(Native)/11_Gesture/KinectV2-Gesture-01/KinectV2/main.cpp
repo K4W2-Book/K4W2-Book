@@ -129,7 +129,7 @@ class KinectApp
 			// Gestureを登録
 			CComPtr<IVisualGestureBuilderFrameSource> gestureFrameSource;
 			ERROR_CHECK( gestureFrameReader[count]->get_VisualGestureBuilderFrameSource( &gestureFrameSource ) );
-			ERROR_CHECK( gestureFrameSource->AddGestures( gestureCount, &gestures[0] ) );
+			ERROR_CHECK( gestureFrameSource->AddGestures( gestureCount, &gestures[0].p ) );
 
 			// Gestureの有効化
 			for( const CComPtr<IGesture> g : gestures ){
