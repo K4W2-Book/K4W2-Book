@@ -204,6 +204,9 @@ class KinectApp
 				if( ( colorX >= 0 ) && ( colorX < colorWidth ) && ( colorY >= 0 ) && ( colorY < colorHeight ) ){
 					dst[index] = src[colorY * colorWidth + colorX];
 				}
+				else{
+					dst[index] = {};
+				}
 			}
 		} );
 
