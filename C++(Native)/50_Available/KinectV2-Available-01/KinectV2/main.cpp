@@ -81,7 +81,7 @@ private:
     // Kinectの状態更新
     void updateKinectAvailable()
     {
-        ComPtr<IIsAvailableChangedEventArgs> args;
+        CComPtr<IIsAvailableChangedEventArgs> args;
         auto ret = kinect->GetIsAvailableChangedEventData( waitableHandle, &args );
         if ( ret != S_OK ) {
             return;
@@ -94,12 +94,12 @@ private:
         if ( !isAvailable && available ){
             if ( colorFrameReader == nullptr ){
                 // カラーリーダーを取得する
-                ComPtr<IColorFrameSource> colorFrameSource;
+                CComPtr<IColorFrameSource> colorFrameSource;
                 ERROR_CHECK( kinect->get_ColorFrameSource( &colorFrameSource ) );
                 ERROR_CHECK( colorFrameSource->OpenReader( &colorFrameReader ) );
 
                 // カラー画像のサイズを取得する
-                ComPtr<IFrameDescription> colorFrameDescription;
+                CComPtr<IFrameDescription> colorFrameDescription;
                 ERROR_CHECK( colorFrameSource->CreateFrameDescription(
                     ColorImageFormat::ColorImageFormat_Bgra, &colorFrameDescription ) );
                 ERROR_CHECK( colorFrameDescription->get_Width( &colorWidth ) );
@@ -127,7 +127,7 @@ private:
         }
 
         // フレームを取得する
-        ComPtr<IColorFrame> colorFrame;
+        CComPtr<IColorFrame> colorFrame;
         auto ret = colorFrameReader->AcquireLatestFrame( &colorFrame );
         if ( ret == S_OK ){
             // BGRAの形式でデータを取得する
