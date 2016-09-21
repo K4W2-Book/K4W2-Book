@@ -4,9 +4,7 @@
 #include <Kinect.h>
 #include <opencv2\opencv.hpp>
 
-// Visual Studio Professional以上を使う場合はCComPtrの利用を検討してください。
-#include "ComPtr.h"
-//#include <atlbase.h>
+#include <atlbase.h>
 
 // 次のように使います
 // ERROR_CHECK( ::GetDefaultKinectSensor( &kinect ) );
