@@ -97,10 +97,10 @@ private:
 
     void draw()
     {
-        drawBodyIndexFrame();
+        drawBodyFrame();
     }
 
-    void drawBodyIndexFrame()
+    void drawBodyFrame()
     {
         // 関節の座標をDepth座標系で表示する
         cv::Mat bodyImage = cv::Mat::zeros( 424, 512, CV_8UC4 );
