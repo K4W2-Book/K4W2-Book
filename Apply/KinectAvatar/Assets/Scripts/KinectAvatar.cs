@@ -136,8 +136,8 @@ public class KinectAvatar : MonoBehaviour {
 		}
 
         // 関節の回転を計算する
-        var q = transform.rotation;
-        transform.rotation = Quaternion.identity;
+        var q = Ref.transform.rotation;
+        Ref.transform.rotation = Quaternion.identity;
 
         var comp2 = Quaternion.AngleAxis( 90, new Vector3( 0, 1, 0 ) ) *
                     Quaternion.AngleAxis( -90, new Vector3( 0, 0, 1 ) );
@@ -152,14 +152,14 @@ public class KinectAvatar : MonoBehaviour {
         LeftForeArm.transform.rotation = WristLeft * comp2;
         LeftHand.transform.rotation = HandLeft * comp2;
 
-        RightUpLeg.transform.rotation = KneeRight * comp2;
-        RightLeg.transform.rotation = AnkleRight * comp2;
+        RightUpLeg.transform.rotation = KneeRight *  Quaternion.AngleAxis( -90, new Vector3( 0, 0, 1 ) );
+        RightLeg.transform.rotation = AnkleRight *  Quaternion.AngleAxis( -90, new Vector3( 0, 0, 1 ) );
 
-		LeftUpLeg.transform.rotation = KneeLeft *  Quaternion.AngleAxis( -90, new Vector3( 0, 0, 1 ) );
-		LeftLeg.transform.rotation = AnkleLeft * Quaternion.AngleAxis( -90, new Vector3( 0, 0, 1 ) );
+	LeftUpLeg.transform.rotation = KneeLeft *  Quaternion.AngleAxis( -90, new Vector3( 0, 0, 1 ) );
+	LeftLeg.transform.rotation = AnkleLeft * Quaternion.AngleAxis( -90, new Vector3( 0, 0, 1 ) );
 
         // モデルの回転を設定する
-        transform.rotation = q;
+        Ref.transform.rotation = q;
 
         // モデルの位置を移動する
         var pos = body.Joints[JointType.SpineMid].Position;
